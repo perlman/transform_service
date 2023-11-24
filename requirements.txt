@@ -7,7 +7,7 @@ fastapi==0.104.1
 uvicorn[standard]==0.24.0
 msgpack-asgi==1.1.0
 orjson==3.9.10
-Jinja2==2.11.3
+Jinja2==3.1.2
 blosc==1.11.1
 zstd==1.5.5.1
 pytest==7.4.3
