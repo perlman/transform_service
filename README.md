@@ -7,3 +7,11 @@ This code is based on [CloudVolumeServer](https://github.com/flyconnectome/Cloud
 
 ## Run tests
 ```pytest```
+
+
+## For deploymen
+
+Use gunicorn+guvicorn worker for deployment:
+```
+gunicorn app.main:app -w 4 -k uvicorn.workers.UvicornWorker
+```
