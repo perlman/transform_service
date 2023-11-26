@@ -61,7 +61,6 @@ tags_metadata = [
     }
 ]
 
-
 app = FastAPI(default_response_class=ORJSONResponse,
                 title="Transformation Service",
                 description=api_description,
