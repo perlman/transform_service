@@ -66,6 +66,7 @@ app = FastAPI(default_response_class=ORJSONResponse,
                 title="Transformation Service",
                 description=api_description,
                 openapi_tags=tags_metadata,
+                root_path=os.environ.get('ROOT_PATH'),
                 debug=True)
 
 # MessagePackMiddleware does not currently support large request (`more_body`) so we'll do our own...
