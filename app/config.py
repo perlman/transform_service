@@ -62,5 +62,23 @@ DATASOURCES = {
                 'path': '/data/ssd_data/fanc_precomputed/full_run_v4/'
             }
         }
+    },
+    'banc_lookup_remote' : {
+        'description' : 'Zetta.ai segmentation of BANC',
+        'type' : 'neuroglancer_precomputed',
+        # These mip levels are those in the segmentation (@ 16nm) and NOT the raw data (@4nm)
+        'scales' : [2, 3, 4, 5, 6, 7, 8],
+        'voxel_size' : [16, 16, 45],
+        'services' : ['query'],
+        'dtype' : 'uint64',
+        'width' : 1,
+        'tsinfo' : {
+            'driver' : 'neuroglancer_precomputed',
+            'kvstore': {
+                'driver': 'gcs',
+                'bucket': 'zetta_lee_fly_cns_001_segmentation',
+            },
+            'path': 'v1_sharded'
+        }
     }
 }
