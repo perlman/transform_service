@@ -65,7 +65,7 @@ def get_multiple_ids(x, vol, dtype=None, max_workers=4, blocksize=np.array([512,
     cbin = cbin.loc[~np.any(cbin.isnull(), axis=1)]
 
     # This is now a dictionary of bin -> indices of coordinates
-    blocked = cbin.groupby(['x_bin', 'y_bin', 'z_bin']).indices
+    blocked = cbin.groupby(['x_bin', 'y_bin', 'z_bin'], observed=False).indices
 
     # Map filtered indices back to non-filtered indices
     blocked = {k: cbin.index[v] for k,v in blocked.items()}
