@@ -43,6 +43,7 @@ def get_multiple_ids(x, vol, dtype=None, max_workers=4, blocksize=np.array([512,
     vol :     cloudvolume.CloudVolume
     dtype :   dtype to use for return field (if None, return same as stored)
     """
+
     # Make sure x is array
     if not isinstance(x, np.ndarray):
         x = np.array(x)

@@ -28,6 +28,10 @@ def get_datastore(dataset_name, mip):
         
     if mip not in datainfo['scales']:
         raise HTTPException(status_code=400, detail="Scale {} not found".format(mip))
+    
+    # Optional remapping of logical mip levels to ones stored in the data
+    if datainfo['data_scales']:
+        mip = datainfo['data_scales'][datainfo['scales'].index(mip)]
 
     # Read main settings from config
     tsinfo = copy.deepcopy(datainfo['tsinfo'].copy())

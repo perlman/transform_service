@@ -66,9 +66,9 @@ DATASOURCES = {
     'banc_lookup_remote' : {
         'description' : 'Zetta.ai segmentation of BANC',
         'type' : 'neuroglancer_precomputed',
-        # These mip levels are those in the segmentation (@ 16nm) and NOT the raw data (@4nm)
-        'scales' : [2, 3, 4, 5, 6, 7, 8],
-        'voxel_size' : [16, 16, 45],
+        'scales' : [2, 3, 4, 5, 6, 7],
+        'data_scales' : [0, 1, 2, 3, 4, 5],
+        'voxel_size' : [4, 4, 45],  
         'services' : ['query'],
         'dtype' : 'uint64',
         'width' : 1,

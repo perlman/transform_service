@@ -10,6 +10,7 @@ def query_points(dataset, scale, locs):
        Input:  [n,3] numpy array representing n (x,y,z) points
        Output: [n,5] numpy array representing n (new_x, new_y, new_z, new_dx, new_dy)
     """
+
     info = datasource.get_datasource_info(dataset)
     n5 = datasource.get_datastore(dataset, scale)
     downsample = datasource.get_datastore_downsample(dataset, scale)
