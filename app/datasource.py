@@ -30,7 +30,7 @@ def get_datastore(dataset_name, mip):
         raise HTTPException(status_code=400, detail="Scale {} not found".format(mip))
     
     # Optional remapping of logical mip levels to ones stored in the data
-    if datainfo['data_scales']:
+    if 'data_scales' in datainfo:
         mip = datainfo['data_scales'][datainfo['scales'].index(mip)]
 
     # Read main settings from config
