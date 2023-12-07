@@ -41,7 +41,7 @@ DATASOURCES = {
             'driver' : 'zarr',
             'kvstore': {
                 'driver': 'file',
-                'path' : '/data/fields/fanc/field.zarr'
+                'path' : '/mnt/gandalf_ssd_v2/fields/fanc_xform.zarr/'
             },
             'key_encoding': '/'
         }  
@@ -59,7 +59,7 @@ DATASOURCES = {
             'driver' : 'neuroglancer_precomputed',
             'kvstore': {
                 'driver': 'file',
-                'path': '/data/ssd_data/fanc_precomputed/full_run_v4/'
+                'path': '/mnt/gandalf_ssd_v2/fields/fanc_full_run_v4/'
             }
         }
     },
@@ -80,5 +80,22 @@ DATASOURCES = {
             },
             'path': 'v1_sharded'
         }
+    },
+     'banc_lookup_local' : {
+        'description' : 'Zetta.ai segmentation of BANC; only sections 2055 & 2688 (92500, 121000) ',
+        'type' : 'neuroglancer_precomputed',
+        'scales' : [2, 3, 4, 5, 6, 7],
+        'voxel_size' : [4, 4, 45],  
+        'services' : ['query'],
+        'dtype' : 'uint64',
+        'width' : 1,
+        'tsinfo' : {
+            'driver' : 'zarr',
+            'kvstore': {
+                'driver': 'file',
+                'path' : '/mnt/gandalf_ssd_v2/fields/banc_planes_test.zarr'
+            },
+            'key_encoding': '/'
+        }  
     }
 }
