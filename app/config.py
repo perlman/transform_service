@@ -83,7 +83,7 @@ DATASOURCES = {
     },
      'banc_lookup_local' : {
         'description' : 'Zetta.ai segmentation of BANC; only sections 2055 & 2688 (92500, 121000) ',
-        'type' : 'neuroglancer_precomputed',
+        'type' : 'zarr-nested',
         'scales' : [2, 3, 4, 5, 6, 7],
         'voxel_size' : [4, 4, 45],  
         'services' : ['query'],
